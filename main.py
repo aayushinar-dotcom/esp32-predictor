@@ -21,7 +21,7 @@ async def predict(file: UploadFile = File(...)):
         image = Image.open(io.BytesIO(image_bytes)).convert("RGB")
 
         # Same inference you're already doing — just on ESP32 image instead of webcam
-       results = model(image, imgsz=640)
+       results = model(image, imgsz=320)
 
         detections = []
         for result in results:
